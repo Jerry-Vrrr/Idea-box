@@ -1,0 +1,28 @@
+/* Header Text: Open Sans, Bold Body, and Label Text: Open Sans, Light
+Background: #1f1F3D (dark blue)
+Background: #A9AAD2 (light purple)
+Background: #EAEAF4 (grey)
+
+Idea Box Cards:
+Comment: Hex Value: E9E9F3
+Purple: Hex Value: 5356A4
+Line after IdeaBox: Hex Value: 353567
+Filter Starred Ideas: Hex Value: BFBFDD */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.left-section {
+  background: #1f1F3D;
+}
+
+.top-section {
+  background: #A9AAD2;
+}
+
+.bottom-section {
+  background: #EAEAF4;
+}
