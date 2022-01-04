@@ -8,6 +8,7 @@ Comment: Hex Value: E9E9F3
 Purple: Hex Value: 5356A4
 Line after IdeaBox: Hex Value: 353567
 Filter Starred Ideas: Hex Value: BFBFDD */
+
 .wrapper {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -32,6 +33,26 @@ body {
   font-size: 24px;
   text-align: left;
   padding-left: 15px;
+  padding-right: 15px;
+}
+
+hr {
+  /* color: #5356A4; */
+}
+
+.show-starred-ideas {
+  height: 50px;
+  width: 235px;
+  align-self: stretch;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: #5356A4;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 2px;
+  border-color: #5356A4;
+  border-style: solid;
 }
 
 .top-section {
@@ -48,8 +69,6 @@ body {
   font-size: 14px;
   font-weight: bold;
 }
-
-
 
 .bottom-section {
   background: #EAEAF4;
@@ -81,7 +100,6 @@ body {
   border-radius: 3px;
   border-color: #5356A4;
   border-style: solid;
-
 }
 
 #body-form {
@@ -92,7 +110,6 @@ body {
   border-radius: 3px;
   border-color: #5356A4;
   border-style: solid;
-
 }
 
 .search-input {
