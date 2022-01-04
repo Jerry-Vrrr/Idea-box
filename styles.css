@@ -9,6 +9,7 @@ Purple: Hex Value: 5356A4
 Line after IdeaBox: Hex Value: 353567
 Filter Starred Ideas: Hex Value: BFBFDD */
 
+/* ~~~~~ Global ~~~~~ */
 .wrapper {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -23,6 +24,8 @@ body {
   width: 100%;
 }
 
+
+/* ~~~~~ Left Section ~~~~~ */
 .left-section {
   background: #1f1F3D;
   grid-column: 1/2;
@@ -32,20 +35,33 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   text-align: left;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.left-section-title {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-hr {
-  /* color: #5356A4; */
+.filter-starred-ideas {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.show-starred-ideas {
+.divider {
+  height: 2px;
+  background-color: #353567;
+  border: none;
+  margin-top: 3.5px;
+}
+
+.show-starred-ideas-button {
   height: 50px;
   width: 235px;
-  align-self: stretch;
+  /* align-self: stretch;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 30px; */
   background: #5356A4;
   color: #ffffff;
   font-size: 20px;
@@ -53,8 +69,13 @@ hr {
   border-radius: 2px;
   border-color: #5356A4;
   border-style: solid;
+  margin: 40px auto;
+  padding: 15px 0px;
+  margin-left: 15px;
 }
 
+
+/* ~~~~~ Top Section ~~~~~ */
 .top-section {
   display: flex;
   flex-direction: column;
@@ -68,16 +89,6 @@ hr {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: bold;
-}
-
-.bottom-section {
-  background: #EAEAF4;
-  grid-column: 2/5;
-  grid-row: 3/5;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 24px;
-  text-align: left;
-  padding-left: 15px;
 }
 
 .save-button {
@@ -119,4 +130,37 @@ hr {
   border-style: solid;
   height: 50px;
   width: 350px;
+}
+
+
+/* ~~~~~ Bottom Section - Idea Cards ~~~~~ */
+.bottom-section {
+  background: #EAEAF4;
+  grid-column: 2/5;
+  grid-row: 3/5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-align: left;
+  padding-left: 15px;
+  display: none;
+}
+
+.idea-cards {
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: 2;
+  grid-row: 3;
+  border-style: solid;
+  border-color: #5356A4;
+}
+
+.idea-card-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.idea-card-body {
+  font-family: 'Open Sans', sans-serif;
 }
