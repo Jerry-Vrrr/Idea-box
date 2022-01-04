@@ -154,13 +154,31 @@ body {
   grid-row: 3;
   border-style: solid;
   border-color: #5356A4;
+
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-header {
+  height: 40px;
+  background-color: #1f1F3D ;
+}
+
+.card-footer {
+  height: 20px;
+  background-color: #5356A4;
+  color: #FFFFFF;
 }
 
 .idea-card-title {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .idea-card-body {
   font-family: 'Open Sans', sans-serif;
+  margin-left: 10px;
 }
