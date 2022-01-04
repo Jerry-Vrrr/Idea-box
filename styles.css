@@ -8,6 +8,7 @@ Comment: Hex Value: E9E9F3
 Purple: Hex Value: 5356A4
 Line after IdeaBox: Hex Value: 353567
 Filter Starred Ideas: Hex Value: BFBFDD */
+
 .wrapper {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -26,16 +27,96 @@ body {
   background: #1f1F3D;
   grid-column: 1/2;
   grid-row: 1/5;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+hr {
+  /* color: #5356A4; */
+}
+
+.show-starred-ideas {
+  height: 50px;
+  width: 235px;
+  align-self: stretch;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: #5356A4;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 2px;
+  border-color: #5356A4;
+  border-style: solid;
 }
 
 .top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  padding: 10px;
   background: #A9AAD2;
   grid-column: 2/5;
   grid-row: 1/3;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .bottom-section {
   background: #EAEAF4;
   grid-column: 2/5;
   grid-row: 3/5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.save-button {
+  height: 50px;
+  width: 358px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: #1f1F3D;
+  color: #ffffff;
+  border-radius: 3px;
+  border-color: #5356A4;
+  border-style: solid;
+}
+
+ #title-form {
+  margin-top: 6px;
+  margin-bottom: 30px;
+  height: 50px;
+  width: 350px;
+  border-radius: 3px;
+  border-color: #5356A4;
+  border-style: solid;
+}
+
+#body-form {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  height: 100px;
+  width: 350px;
+  border-radius: 3px;
+  border-color: #5356A4;
+  border-style: solid;
+}
+
+.search-input {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border-color: #5356A4;
+  border-style: solid;
+  height: 50px;
+  width: 350px;
 }
