@@ -155,11 +155,10 @@ body {
   display: none;
 }
 
-.idea-cards {
+.idea-card {
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   grid-column: 2;
   grid-row: 3;
   border-style: solid;
