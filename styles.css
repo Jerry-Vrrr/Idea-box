@@ -162,8 +162,13 @@ body {
 }
 
 .card-header {
-  height: 40px;
+  height: 30px;
   background-color: #1f1F3D ;
+}
+
+.delete,
+.delete-active {
+  float:right;
 }
 
 .card-footer {
@@ -181,4 +186,8 @@ body {
 .idea-card-body {
   font-family: 'Open Sans', sans-serif;
   margin-left: 10px;
+}
+
+.hidden {
+  display: none;
 }
