@@ -26,4 +26,8 @@ function cardSwitch() {
     star.classList.add('hidden')
     starActive.classList.remove('hidden')
   }
+  if (event.target.className === 'delete') {
+    deleteButton.classList.add('hidden')
+    deleteButtonActive.classList.remove('hidden')
+  }
 }
