@@ -4,10 +4,11 @@
 
 var star = document.querySelector('.star')
 var starActive = document.querySelector('.star-active')
-var ideaCardsSection = document.querySelector('.idea-cards')
+var ideaCardsSection = document.querySelector('.idea-cards-section')
 
 var deleteButton = document.querySelector('.delete')
 var deleteButtonActive = document.querySelector('.delete-active')
+var ideaCard = document.querySelector('.idea-card')
 
 // var activeDelete= document.querySelector(.'delete-active');
 // var commentPlus = document.querySelector(.'comment-plus');
@@ -29,5 +30,6 @@ function cardSwitch() {
   if (event.target.className === 'delete') {
     deleteButton.classList.add('hidden')
     deleteButtonActive.classList.remove('hidden')
+    ideaCard.classList.add('hidden')
   }
 }
