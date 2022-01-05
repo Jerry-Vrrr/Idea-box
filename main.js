@@ -20,6 +20,14 @@ var ideaCard = document.querySelector('.idea-card')
 
 // star.addEventListener('')
 // activeStar.addEventListener('')
+deleteButton.addEventListener('mouseover', deleteSwitch)
+
+function deleteSwitch() {
+  deleteButton.classList.add('hidden')
+  deleteButtonActive.classList.remove('hidden')
+}
+
+
 ideaCardsSection.addEventListener('click', cardSwitch)
 
 function cardSwitch() {
