@@ -149,12 +149,11 @@ body {
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   grid-column: 2;
   grid-row: 3;
   border-style: solid;
   border-color: #5356A4;
-
   margin-right: 25px;
   margin-left: 25px;
   margin-top: 10px;
@@ -172,9 +171,17 @@ body {
 }
 
 .card-footer {
-  height: 20px;
+  display: inline-block;
+  flex-direction: row;
+  height: 30px;
   background-color: #5356A4;
   color: #FFFFFF;
+}
+.label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 15px;
 }
 
 .idea-card-title {
@@ -184,7 +191,9 @@ body {
 }
 
 .idea-card-body {
+  position: relative;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
   margin-left: 10px;
 }
 
