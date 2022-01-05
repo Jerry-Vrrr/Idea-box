@@ -103,6 +103,16 @@ body {
   border-style: solid;
 }
 
+.search-box {
+  height: 50px;
+  width: 50px;
+  background: #1f1F3D;
+
+}
+.search-icon {
+
+}
+
  #title-form {
   margin-top: 6px;
   margin-bottom: 30px;
