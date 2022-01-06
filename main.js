@@ -13,21 +13,20 @@ var ideaCardsSection = document.querySelector('.idea-cards-section');
 var deleteButton = document.querySelector('.delete');
 var deleteButtonActive = document.querySelector('.delete-active');
 var ideaCard = document.querySelector('.idea-card');
-var commentPlus = document.querySelector(.'comment-plus');
+var commentPlus = document.querySelector('.comment-plus');
 
 //Top Section
-var ideaTitle = document.querySelector(.'idea-card-title');
-var ideaBody = document.querySelector(.'idea-card-body');
-var searchIdea = document.querySelector(.'search-ideas-bar');
-var saveButton = document.querySelector(.'save-button');
+var ideaTitle = document.querySelector('.idea-card-title');
+var ideaBody = document.querySelector('idea-card-body');
+var searchIdea = document.querySelector('.search-ideas-bar');
+var saveButton = document.querySelector('.save-button');
 
 //Left section
-var showStarredIdeasButton = document.querySelector(.'show-starred-ideas-button');
+var showStarredIdeasButton = document.querySelector('.show-starred-ideas-button');
 
 /* ~~~~~ 👇🏼 Event Listeners Go Here 👇🏼 ~~~~~ */
 
-// star.addEventListener('')
-// activeStar.addEventListener('')
+
 ideaCardsSection.addEventListener('click', cardSwitch)
 
 
@@ -35,12 +34,19 @@ ideaCardsSection.addEventListener('click', cardSwitch)
 
 function cardSwitch() {
   if (event.target.className === 'star') {
-    star.classList.add('hidden')
-    starActive.classList.remove('hidden')
+      hide(star)
+      show(starActive)
   }
   if (event.target.className === 'delete') {
-    deleteButton.classList.add('hidden')
-    deleteButtonActive.classList.remove('hidden')
-    ideaCard.classList.add('hidden')
+    hide(deleteButton)
+    show(deleteButtonActive)
+    hide(ideaCard)
   }
+}
+function hide(element) {
+    element.classList.add('hidden')
+}
+
+function show(element) {
+    element.classList.remove('hidden')
 }
