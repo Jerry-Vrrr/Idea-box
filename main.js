@@ -35,11 +35,15 @@ saveButton.addEventListener('click', saveCard)
 /* ~~~~~ 👇🏼 Functions Go Here 👇🏼 ~~~~~ */
 
 function saveCard() {
-  event.preventDefault()
-  var idea = new Idea(titleForm.value,bodyForm.value);
-  currentIdeas.unshift(idea)
-  ideaTitle.innerText = currentIdeas[0].title
-  ideaBody.innerText =  currentIdeas[0].body
+    event.preventDefault()
+    var idea = new Idea(titleForm.value,bodyForm.value);
+    currentIdeas.unshift(idea)
+
+    ideaTitle.innerText = currentIdeas[0].title
+    ideaBody.innerText =  currentIdeas[0].body
+    
+    titleForm.value = ''
+    bodyForm.value = ''
 }
 
 function cardSwitch() {
