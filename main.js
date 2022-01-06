@@ -2,33 +2,36 @@
 // var idea = new Idea();
 // var currentIdeas = []
 
-var star = document.querySelector('.star')
-var starActive = document.querySelector('.star-active')
-var ideaCardsSection = document.querySelector('.idea-cards-section')
+/* ~~~~~ 👇🏼 Query Selectors Go Here 👇🏼 ~~~~~ */
 
-var deleteButton = document.querySelector('.delete')
-var deleteButtonActive = document.querySelector('.delete-active')
-var ideaCard = document.querySelector('.idea-card')
+//Star Buttons
+var star = document.querySelector('.star');
+var starActive = document.querySelector('.star-active');
+var ideaCardsSection = document.querySelector('.idea-cards-section');
 
-// var activeDelete= document.querySelector(.'delete-active');
-// var commentPlus = document.querySelector(.'comment-plus');
-//
-// var ideaTitle = document.querySelector(.'idea-card-title');
-// var ideaBody = document.querySelector(.'idea-card-body');
-// var searchIdea = document.querySelector(.'search-ideas-bar');
-//
+//Delete Buttons
+var deleteButton = document.querySelector('.delete');
+var deleteButtonActive = document.querySelector('.delete-active');
+var ideaCard = document.querySelector('.idea-card');
+var commentPlus = document.querySelector(.'comment-plus');
+
+//Top Section
+var ideaTitle = document.querySelector(.'idea-card-title');
+var ideaBody = document.querySelector(.'idea-card-body');
+var searchIdea = document.querySelector(.'search-ideas-bar');
+var saveButton = document.querySelector(.'save-button');
+
+//Left section
+var showStarredIdeasButton = document.querySelector(.'show-starred-ideas-button');
+
+/* ~~~~~ 👇🏼 Event Listeners Go Here 👇🏼 ~~~~~ */
 
 // star.addEventListener('')
 // activeStar.addEventListener('')
-deleteButton.addEventListener('mouseover', deleteSwitch)
-
-function deleteSwitch() {
-  deleteButton.classList.add('hidden')
-  deleteButtonActive.classList.remove('hidden')
-}
-
-
 ideaCardsSection.addEventListener('click', cardSwitch)
+
+
+/* ~~~~~ 👇🏼 Functions Go Here 👇🏼 ~~~~~ */
 
 function cardSwitch() {
   if (event.target.className === 'star') {
