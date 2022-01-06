@@ -1,8 +1,8 @@
 class Idea {
-  constructor(idea) {
-    this.title = idea.title;
-    this.body = idea.body;
-    this.comment = idea.comment;
+  constructor(title,body) {
+    this.title = title;
+    this.body = body;
+    // this.comment = ;
     this.starred = false;
     this.id = Date.now()
   }
@@ -11,3 +11,6 @@ class Idea {
 
   }
 }
+
+
+// module.exports = Idea;
