@@ -39,12 +39,12 @@ function saveCard () {
   var idea = new Idea(titleForm.value,bodyForm.value);
   currentIdeas.unshift(idea)
 
-  ideaTitle.innerText = currentIdeas[0].title
-  ideaBody.innerText =  currentIdeas[0].body
+  // ideaTitle.innerText = currentIdeas[0].title
+  // ideaBody.innerText =  currentIdeas[0].body
 
   titleForm.value = ''
   bodyForm.value = ''
-
+  saveButton.classList.add('disabled')
 
   ideaCardsSection.innerHTML = "";
   for (var i = 0; i < currentIdeas.length; i ++) {
