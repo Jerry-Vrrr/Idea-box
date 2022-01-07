@@ -34,28 +34,50 @@ titleForm.addEventListener('input', enableSaveButton)
 bodyForm.addEventListener('input', enableSaveButton)
 
 /* ~~~~~ 👇🏼 Functions Go Here 👇🏼 ~~~~~ */
+function saveCard () {
+  event.preventDefault()
+  var idea = new Idea(titleForm.value,bodyForm.value);
+  currentIdeas.unshift(idea)
+
+  ideaTitle.innerText = currentIdeas[0].title
+  ideaBody.innerText =  currentIdeas[0].body
+
+  titleForm.value = ''
+  bodyForm.value = ''
+
+
+  ideaCardsSection.innerHTML = "";
+  for (var i = 0; i < currentIdeas.length; i ++) {
+    ideaCardsSection.innerHTML += `
+    <section class="idea-cards-section">
+      <div class="idea-card">
+        <header class="card-header">
+          <img class="star" src="assets/star.svg" />
+          <img class="star-active hidden" src="assets/star-active.svg" />
+          <img class="delete" src="assets/delete.svg" />
+          <img class="delete-active hidden" src="assets/delete-active.svg" />
+        </header>
+        <h1 class="idea-card-title">${currentIdeas[i].title}</h1>
+        <h5 class="idea-card-body">${currentIdeas[i].body}</h5>
+        <footer class='card-footer'>
+          <img class="comment-plus" src="assets/comment.svg" />
+          <label class="comment">Comment</label>
+        </footer>
+      </div>
+    </section>`
+  }
+}
+
 
 function enableSaveButton() {
   if (titleForm.value && bodyForm.value)
     saveButton.classList.remove('disabled')
   }
 
-function saveCard() {
-    event.preventDefault()
-    var idea = new Idea(titleForm.value,bodyForm.value);
-    currentIdeas.unshift(idea)
-
-    ideaTitle.innerText = currentIdeas[0].title
-    ideaBody.innerText =  currentIdeas[0].body
-
-    titleForm.value = ''
-    bodyForm.value = ''
-}
-
 function cardSwitch() {
   if (event.target.className === 'star') {
-      hide(star)
-      show(starActive)
+    hide(star)
+    show(starActive)
   }
   if (event.target.className === 'delete') {
     hide(deleteButton)
