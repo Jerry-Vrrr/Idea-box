@@ -28,11 +28,17 @@ var showStarredIdeasButton = document.querySelector('.show-starred-ideas-button'
 
 /* ~~~~~ 👇🏼 Event Listeners Go Here 👇🏼 ~~~~~ */
 
-
 ideaCardsSection.addEventListener('click', cardSwitch)
 saveButton.addEventListener('click', saveCard)
+titleForm.addEventListener('input', enableSaveButton)
+bodyForm.addEventListener('input', enableSaveButton)
 
 /* ~~~~~ 👇🏼 Functions Go Here 👇🏼 ~~~~~ */
+
+function enableSaveButton() {
+  if (titleForm.value && bodyForm.value)
+    saveButton.classList.remove('disabled')
+  }
 
 function saveCard() {
     event.preventDefault()
@@ -41,7 +47,7 @@ function saveCard() {
 
     ideaTitle.innerText = currentIdeas[0].title
     ideaBody.innerText =  currentIdeas[0].body
-    
+
     titleForm.value = ''
     bodyForm.value = ''
 }
