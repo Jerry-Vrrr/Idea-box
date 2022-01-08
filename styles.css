@@ -68,6 +68,9 @@ body {
 /* ~~~~~ Top Section ~~~~~ */
 .top-section {
   display: flex;
+
+  /* almost got the bottom section to wrap cards at 3 but they disappear
+  flex-wrap: wrap; */
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -173,12 +176,17 @@ body {
 /* ~~~~~ Bottom Section - Idea Cards ~~~~~ */
 
 .idea-cards-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
+  align-self: start;
+  flex-wrap: wrap;
+  /* padding: 10%; */
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 20px;
   height: 100%;
-  width: 100%;
+  width: 100%; */
 }
 
 .idea-card {
@@ -186,6 +194,7 @@ body {
   height: 215px;
   width: 200px;
   border: 2px solid #1f1f3d;
+  margin: 20px;
 }
 
 .card-header {
@@ -200,6 +209,7 @@ body {
 
 .card-footer {
   height: 26px;
+  margin-top: 79px;
   background-color: #5356A4;
   display: flex;
   justify-content: flex-start;
