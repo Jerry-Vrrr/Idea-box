@@ -1,4 +1,3 @@
-
 var currentIdeas = []
 
 /* ~~~~~ 👇🏼 Query Selectors Go Here 👇🏼 ~~~~~ */
@@ -17,6 +16,7 @@ var ideaCardsSection = document.querySelector('.idea-cards-section');
 /* ~~~~~ 👇🏼 Event Listeners Go Here 👇🏼 ~~~~~ */
 
 ideaCardsSection.addEventListener('click', favoriteIdea)
+ideaCardsSection.addEventListener('click', deleteIdea)
 saveButton.addEventListener('click', saveCard)
 titleForm.addEventListener('input', enableSaveButton)
 bodyForm.addEventListener('input', enableSaveButton)
@@ -58,13 +58,11 @@ function displayCard() {
         </footer>
       </div>
     </section>`
-
     } else {
-
     ideaCardsSection.innerHTML += `
     <section class="idea-cards-section" id="${currentIdeas[i].id}">
       <div class="idea-card" id="${currentIdeas[i].id}">
-        <header class="card-header""${currentIdeas[i].id}">
+        <header class="card-header" id="${currentIdeas[i].id}">
           <img class="star-active" src="assets/star-active.svg"  />
           <img class="delete" src="assets/delete.svg" />
           <img class="delete-active hidden" src="assets/delete-active.svg" />
@@ -77,21 +75,30 @@ function displayCard() {
         </footer>
       </div>
     </section>`
-      }
     }
+  }
 }
 
 function favoriteIdea(event) {
-  for (var i = 0; i < currentIdeas.length; i++){
-    if (event.target.parentElement.id == currentIdeas[i].id){
+  for (var i = 0; i < currentIdeas.length; i++) {
+    if (event.target.parentElement.id == currentIdeas[i].id) {
       currentIdeas[i].updateIdea(currentIdeas[i])
     }
   }
   displayCard()
 }
 
-function enableSaveButton() {
-  if (titleForm.value && bodyForm.value){
-    saveButton.classList.remove('disabled')
+function deleteIdea(event) {
+  for (var i = 0; i < currentIdeas.length; i++) {
+    if (event.target.parentElement.id == currentIdeas[i].id) {
+      currentIdeas.splice(i, 1);
     }
+  }
+  displayCard()
+}
+
+function enableSaveButton() {
+  if (titleForm.value && bodyForm.value) {
+    saveButton.classList.remove('disabled')
+  }
 }
