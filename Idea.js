@@ -7,17 +7,7 @@ class Idea {
     this.id = Date.now()
   }
 
-  // updateIdea() {
-  //   if (event.target.className === 'star') {
-  //     this.starred = true
-  //     hide(star)
-  //     show(starActive)
-  //   }
-  //   if (event.target.className === 'delete') {
-  //     hide(deleteButton)
-  //     show(deleteButtonActive)
-  //     hide(ideaCardsSection)
-  //   }
-  //
-  // }
+  updateIdea(idea){
+    idea.starred = true
+  }
 }
