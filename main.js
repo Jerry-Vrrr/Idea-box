@@ -28,19 +28,12 @@ var showStarredIdeasButton = document.querySelector('.show-starred-ideas-button'
 // star.addEventListener('click', cardSwitch)
 //a button that feels for the star click and loads "your getThisThingOn" function
 
-ideaCardsSection.addEventListener('click', cardSwitch)
+ideaCardsSection.addEventListener('click', favoriteIdea)
 saveButton.addEventListener('click', saveCard)
 titleForm.addEventListener('input', enableSaveButton)
 bodyForm.addEventListener('input', enableSaveButton)
 
 /* ~~~~~ 👇🏼 Functions Go Here 👇🏼 ~~~~~ */
-
-function getThisThingOn(event) {
-    event.preventDefault();
-    createCard();
-    saveCard();
-    cardSwitch();
-}
 
 function saveCard () {
     event.preventDefault()
@@ -54,19 +47,18 @@ function clearField(){
     titleForm.value = ''
     bodyForm.value = ''
     saveButton.classList.add('disabled')
-    ideaCardsSection.innerHTML = "";
+    ideaCardsSection.innerHTML = '';
 }
-// .closest
-// event.target.parentElement.parentElement
 
-function displayCard(){
+function displayCard() {
+  ideaCardsSection.innerHTML = ''
     for (var i = 0; i < currentIdeas.length; i ++) {
+      if (!currentIdeas[i].starred) {
     ideaCardsSection.innerHTML += `
     <section class="idea-cards-section" id="${currentIdeas[i].id}">
-      <div class="idea-card">
-        <header class="card-header">
-          <img class="star" src="assets/star.svg" />
-          <img class="star-active hidden" src="assets/star-active.svg"  />
+      <div class="idea-card" id="${currentIdeas[i].id}">
+        <header class="card-header" id="${currentIdeas[i].id}">
+          <img class="star" src="assets/star.svg"/>
           <img class="delete" src="assets/delete.svg" />
           <img class="delete-active hidden" src="assets/delete-active.svg" />
         </header>
@@ -78,32 +70,45 @@ function displayCard(){
         </footer>
       </div>
     </section>`
+
+    } else {
+
+    ideaCardsSection.innerHTML += `
+    <section class="idea-cards-section" id="${currentIdeas[i].id}">
+      <div class="idea-card" id="${currentIdeas[i].id}">
+        <header class="card-header""${currentIdeas[i].id}">
+          <img class="star-active" src="assets/star-active.svg"  />
+          <img class="delete" src="assets/delete.svg" />
+          <img class="delete-active hidden" src="assets/delete-active.svg" />
+        </header>
+        <h1 class="idea-card-title">${currentIdeas[i].title}</h1>
+        <h5 class="idea-card-body">${currentIdeas[i].body}</h5>
+        <footer class='card-footer'>
+          <img class="comment-plus" src="assets/comment.svg" />
+          <label class="comment">Comment</label>
+        </footer>
+      </div>
+    </section>`
+      }
     }
 }
-
 
 function enableSaveButton() {
-    // if (titleForm.value && bodyForm.value){
+    if (titleForm.value && bodyForm.value){
     saveButton.classList.remove('disabled')
-    // }
-}
-
-function cardSwitch() {
-    var star = document.querySelector('.star');
-    var starActive = document.querySelector('.star-active');
-    var deleteButton = document.querySelector('.delete');
-    var deleteButtonActive = document.querySelector('.delete-active');
-
-    if (event.target.className === 'star') {
-      hide(star)
-      show(starActive)
-    }
-    if (event.target.className === 'delete') {
-      hide(deleteButton)
-      show(deleteButtonActive)
-      hide(ideaCardsSection)
     }
 }
+
+function favoriteIdea(event) {
+  for (var i = 0; i < currentIdeas.length; i++){
+    if (event.target.parentElement.id == currentIdeas[i].id){
+      console.log('banana')
+          currentIdeas[i].updateIdea(currentIdeas[i])
+    }
+  }
+  displayCard()
+}
+
 /* ~~~~~ 👇🏼 Hide/Show Functions Go Here 👇🏼 ~~~~~ */
 
 function hide(element) {
