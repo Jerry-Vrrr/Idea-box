@@ -1,4 +1,3 @@
-
 var currentIdeas = []
 
 /* ~~~~~ 👇🏼 Query Selectors Go Here 👇🏼 ~~~~~ */
@@ -17,6 +16,7 @@ var ideaCardsSection = document.querySelector('.idea-cards-section');
 /* ~~~~~ 👇🏼 Event Listeners Go Here 👇🏼 ~~~~~ */
 
 ideaCardsSection.addEventListener('click', favoriteIdea)
+ideaCardsSection.addEventListener('click', deleteIdea)
 saveButton.addEventListener('click', saveCard)
 titleForm.addEventListener('input', enableSaveButton)
 bodyForm.addEventListener('input', enableSaveButton)
@@ -43,12 +43,11 @@ function displayCard() {
   for (var i = 0; i < currentIdeas.length; i ++) {
     if (!currentIdeas[i].starred) {
     ideaCardsSection.innerHTML += `
-    <section class="idea-cards-section" id="${currentIdeas[i].id}">
-      <div class="idea-card" id="${currentIdeas[i].id}">
-        <header class="card-header" id="${currentIdeas[i].id}">
-          <img class="star" src="assets/star.svg"/>
-          <img class="delete" src="assets/delete.svg" />
-          <img class="delete-active hidden" src="assets/delete-active.svg" />
+      <div class="idea-card">
+        <header class="card-header">
+          <img class="star" src="assets/star.svg" id="${currentIdeas[i].id}"/>
+          <img class="delete" src="assets/delete.svg" id="${currentIdeas[i].id}"/>
+          <img class="delete-active hidden" src="assets/delete-active.svg" id="${currentIdeas[i].id}"/>
         </header>
         <h1 class="idea-card-title">${currentIdeas[i].title}</h1>
         <h5 class="idea-card-body">${currentIdeas[i].body}</h5>
@@ -56,18 +55,14 @@ function displayCard() {
           <img class="comment-plus" src="assets/comment.svg" />
           <label class="comment">Comment</label>
         </footer>
-      </div>
-    </section>`
-
+      </div>`
     } else {
-
     ideaCardsSection.innerHTML += `
-    <section class="idea-cards-section" id="${currentIdeas[i].id}">
-      <div class="idea-card" id="${currentIdeas[i].id}">
-        <header class="card-header""${currentIdeas[i].id}">
-          <img class="star-active" src="assets/star-active.svg"  />
-          <img class="delete" src="assets/delete.svg" />
-          <img class="delete-active hidden" src="assets/delete-active.svg" />
+      <div class="idea-card">
+        <header class="card-header">
+          <img class="star-active" src="assets/star-active.svg" id="${currentIdeas[i].id}" />
+          <img class="delete" src="assets/delete.svg" id="${currentIdeas[i].id}"/>
+          <img class="delete-active hidden" src="assets/delete-active.svg" id="${currentIdeas[i].id}"/>
         </header>
         <h1 class="idea-card-title">${currentIdeas[i].title}</h1>
         <h5 class="idea-card-body">${currentIdeas[i].body}</h5>
@@ -75,23 +70,34 @@ function displayCard() {
           <img class="comment-plus" src="assets/comment.svg" />
           <label class="comment">Comment</label>
         </footer>
-      </div>
-    </section>`
-      }
+      </div>`
     }
+  }
 }
 
 function favoriteIdea(event) {
+  if (event.target.className == "star" || "star-active")
   for (var i = 0; i < currentIdeas.length; i++){
-    if (event.target.parentElement.id == currentIdeas[i].id){
+    if (event.target.id == currentIdeas[i].id) {
       currentIdeas[i].updateIdea(currentIdeas[i])
     }
   }
   displayCard()
 }
 
-function enableSaveButton() {
-  if (titleForm.value && bodyForm.value){
-    saveButton.classList.remove('disabled')
+function deleteIdea(event) {
+  var deleteButton = document.querySelector('.delete')
+  if (event.target.className == "delete")
+  for (var i = 0; i < currentIdeas.length; i++) {
+    if (event.target.id == currentIdeas[i].id) {
+      currentIdeas.splice(i, 1);
     }
+  }
+  displayCard()
+}
+
+function enableSaveButton() {
+  if (titleForm.value && bodyForm.value) {
+    saveButton.classList.remove('disabled')
+  }
 }

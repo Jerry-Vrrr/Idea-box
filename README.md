@@ -29,6 +29,9 @@ Text Editor: Atom​​​
 3. When a user clicks the delete button on the new idea card, the card will delete from view.
 
 
+![gif](https://user-images.githubusercontent.com/88151743/148700284-e488eb7b-bf89-4ea5-a892-4e7bc7f35dc8.gif)
+
+
 4. When a user clicks the "favorite" star, the star will show as a different color to display that the card has been favorited.
 
 
