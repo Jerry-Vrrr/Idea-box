@@ -16,7 +16,7 @@ var ideaCardsSection = document.querySelector('.idea-cards-section');
 /* ~~~~~ 👇🏼 Event Listeners Go Here 👇🏼 ~~~~~ */
 
 ideaCardsSection.addEventListener('click', favoriteIdea)
-ideaCardsSection.addEventListener('click', deleteIdea)
+// ideaCardsSection.addEventListener('click', deleteIdea)
 saveButton.addEventListener('click', saveCard)
 titleForm.addEventListener('input', enableSaveButton)
 bodyForm.addEventListener('input', enableSaveButton)
@@ -80,22 +80,24 @@ function displayCard() {
 }
 
 function favoriteIdea(event) {
-  for (var i = 0; i < currentIdeas.length; i++) {
-    if (event.target.parentElement.id == currentIdeas[i].id) {
+  for (var i = 0; i < currentIdeas.length; i++){
+    if (event.target.parentElement.id == currentIdeas[i].id){
       currentIdeas[i].updateIdea(currentIdeas[i])
     }
   }
   displayCard()
 }
 
-function deleteIdea(event) {
-  for (var i = 0; i < currentIdeas.length; i++) {
-    if (event.target.parentElement.id == currentIdeas[i].id) {
-      currentIdeas.splice(i, 1);
-    }
-  }
-  displayCard()
-}
+// function deleteIdea(event) {
+//   var deleteButton = document.querySelector('.delete')
+//   if (event.target.className == "delete")
+//   for (var i = 0; i < currentIdeas.length; i++) {
+//     if (event.target.id == currentIdeas[i].id) {
+//       currentIdeas.splice(i, 1);
+//     }
+//   }
+//   displayCard()
+// }
 
 function enableSaveButton() {
   if (titleForm.value && bodyForm.value) {
