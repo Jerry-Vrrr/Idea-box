@@ -7,6 +7,12 @@ class Idea {
   }
 
   updateIdea(idea){
+    // if the star is white then
+    if (!idea.starred){
     idea.starred = true
+  } else {
+      idea.starred = false
+    }
   }
+
 }
